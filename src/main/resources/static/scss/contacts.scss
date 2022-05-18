@@ -1,0 +1,150 @@
+@import "header";
+
+header {
+  .headerBg {
+    background: url("../assets/img/kirpich.jpg") repeat;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  background: #ededed;
+  height: calc(100vh - 60px);
+  .contactsWrapper {
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 1000px;
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background: #ffffff;
+    .companyAttributes {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 40px;
+      img {
+        width: 101px;
+      }
+      .companyName {
+        text-align: center;
+        font-family: "../assets/fonts/Mincho-Regular.ttf", monospace;
+        font-weight: normal;
+      }
+    }
+    .contactsTitle {
+      text-align: center;
+      font-family: "Franklin Gothic Medium", monospace;
+      font-weight: normal;
+    }
+    .contacts {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 40px;
+      p {
+        width: 100%;
+        display: flex;
+        span {
+          font-size: 25px;
+          display: table-cell;
+          margin-bottom: 10px;
+          font-family: monospace;
+        }
+        .question {
+          font-weight: bold;
+          margin-left: 10%;
+          width: 40%;
+        }
+        .answer {
+          a {
+            color: #ff4e00;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    height: 100%;
+    padding-bottom: 20px;
+    //background: #ffffff;
+    //height: calc(100vh - 40px);
+    .contactsWrapper {
+      //background: #f2f2f2;
+      height: min-content;
+      position: relative;
+      left: 0;
+      top: 0;
+      transform: translateX(0) translateY(0);
+      width: 96%;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      //border: 10px solid #b9b9b9;
+      .contactsTitle {
+        font-family: "Courier New", ui-serif;
+      }
+      .contacts {
+        margin-bottom: 20px;
+        p {
+          span {
+            font-size: 20px;
+            font-family: "Segoe UI", serif;
+          }
+          .question {
+            margin-left: 5%;
+            width: 30%;
+            &:after {
+              display: inline;
+              content: ":";
+            }
+          }
+          .answer {
+            margin-left: 5%;
+            margin-right: 5%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  main {
+    .contactsWrapper {
+      .companyAttributes {
+        margin-top: 20px;
+        .companyName {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+      .contacts {
+        p {
+          flex-wrap: wrap;
+          margin-bottom: 25px;
+          span {
+            width: 100%;
+          }
+          .question {
+            margin-bottom: 0;
+            width: 100%;
+          }
+          .answer {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

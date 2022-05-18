@@ -1,0 +1,327 @@
+@import "header";
+
+header {
+  .headerBg {
+    background: url("../assets/img/kirpich.jpg") repeat;
+  }
+}
+
+
+main {
+  .mneTrindaTitle {
+    text-align: center;
+  }
+  .filterWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .filter {
+      width: calc((350px + 10px + 5px) * 4);
+      border: 1px solid black;
+      height: 75px;
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      .iconWrapper {
+        margin-left: 15px;
+        margin-right: -20px;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+      .labelSelector {
+        height: 100%;
+        margin-left: 40px;
+        padding-top: 10px;
+        font-size: 24px;
+        select {
+          font-size: 18px;
+          outline: none;
+          &:focus {
+            outline: none;
+          }
+          option {
+            outline: none;
+          }
+        }
+      }
+
+    }
+  }
+  .catalog {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding-right: calc((100% - ((350px + 10px + 10px) * 4)) / 2);
+    padding-left: calc((100% - ((350px + 10px + 10px) * 4)) / 2);
+
+    .card {
+      width: 350px;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 20px;
+      text-overflow: ellipsis;
+      background: #eaeaea;
+
+      .icon {
+        width: 100%;
+        position: relative;
+        border: 1px solid black;
+        margin-bottom: 10px;
+        background: white;
+
+        &:before {
+          content: "";
+          display: block;
+          padding-bottom: 100%;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          object-fit: contain;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      span {
+        text-overflow: ellipsis;
+      }
+
+      .brickName {
+        font-size: 24px;
+        font-family: "Gill Sans", sans-serif;
+        width: 100%;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .brickSize {
+        font-family: "../assets/fonts/BIZ.ttf", "Segoe UI", monospace;
+        font-size: 20px;
+        width: 100%;
+        display: block;
+      }
+
+      .priceName {
+        font-size: 22px;
+        font-family: Calibri, monospace;
+        .price {
+          font-size: 22px;
+          color: green;
+        }
+      }
+      .orderBtn {
+        margin-top: 2px;
+        width: 100%;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding: .35em 1em calc(.35em + 2px);
+        border-radius: 3px;
+        background: rgb(64,199,129);
+        box-shadow: 0 -3px rgb(53,167,110) inset;
+        transition: 0.2s;
+      }
+      .orderBtn:hover {
+        background: rgb(53, 167, 110);
+      }
+      .orderBtn:active {
+        background: rgb(33,147,90);
+        box-shadow: 0 3px rgb(33,147,90) inset;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1480px) {
+  main {
+    .catalog {
+      padding-right: calc((100% - ((300px + 10px + 10px) * 4)) / 2);
+      padding-left: calc((100% - ((300px + 10px + 10px) * 4)) / 2);
+      .card {
+        width: 300px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  main {
+    .catalog {
+      margin-top: 10px;
+      padding-right: calc((100% - ((250px + 3px + 3px) * 4)) / 2);
+      padding-left: calc((100% - ((250px + 3px + 3px) * 4)) / 2);
+      .card {
+        width: 250px;
+        padding: 10px;
+        margin-left: 3px;
+        margin-right: 3px;
+        margin-bottom: 10px;
+
+        .brickName {
+          font-size: 15px;
+        }
+
+        .brickSize {
+          font-size: 15px;
+        }
+
+        .priceName {
+          font-size: 15px;
+
+          .price {
+            font-size: 15px;
+            color: green;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  main {
+    .catalog {
+      margin-top: 10px;
+      padding: 0;
+      .card {
+        width: calc(50% - 6px);
+        padding: 10px;
+        margin-left: 3px;
+        margin-right: 3px;
+        margin-bottom: 10px;
+
+        .icon {
+          margin-bottom: 5px;
+        }
+
+        .brickName {
+          font-size: 18px;
+        }
+
+        .brickSize {
+          font-size: 16px;
+          max-height: 20px;
+          display: block;
+          .sizeName {
+            font-size: 16px;
+          }
+        }
+        .priceName {
+          font-size: 17px;
+          .price {
+            font-size: 17px;
+            color: green;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    .filterWrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      .filter {
+        width: calc(100% - 6px);
+        height: 50px;
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        .iconWrapper {
+          margin-left: 5px;
+          margin-right: -10px;
+          width: 25px;
+          height: 25px;
+          display: inline-block;
+          img {
+            width: 25px;
+            height: 25px;
+          }
+        }
+        .labelSelector {
+          height: 100%;
+          margin-left: 20px;
+          padding-top: 2px;
+          font-size: 15px;
+          select {
+            font-size: 14px;
+            outline: none;
+            &:focus {
+              outline: none;
+            }
+            option {
+              outline: none;
+            }
+          }
+        }
+
+      }
+    }
+
+    .catalog {
+      margin-top: 10px;
+
+      .card {
+        width: calc(50% - 6px);
+        padding: 10px;
+        margin-left: 3px;
+        margin-right: 3px;
+        margin-bottom: 10px;
+
+        .icon {
+          margin-bottom: 5px;
+        }
+
+        .brickName {
+
+        }
+
+        .brickSize {
+          display: block;
+          width: 100%;
+          font-size: 13px;
+          .sizeName {
+            display: none;
+          }
+        }
+
+        .orderBtn {
+          margin-top: 2px;
+          width: 100%;
+          font-weight: 700;
+          color: white;
+          text-decoration: none;
+          font-size: 15px;
+          padding: .35em .8em calc(.35em + 2px);
+          border-radius: 3px;
+          background: rgb(64,199,129);
+          box-shadow: 0 -3px rgb(53,167,110) inset;
+          transition: 0.2s;
+        }
+      }
+    }
+  }
+}
+

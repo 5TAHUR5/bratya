@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 900px) {
+  .materialHeader {
+    height: 60px;
+  }
+
+  header {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+  }
+  header nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  header nav .headerBg {
+    flex-grow: 1;
+  }
+  header nav ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  header nav ul li {
+    padding-right: 25px;
+    padding-left: 25px;
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: #fff;
+  }
+  header nav ul li:hover {
+    background: url("../assets/img/kirpich.jpg") repeat;
+  }
+  header nav ul li:hover a {
+    color: #ffffff;
+  }
+  header nav ul li a {
+    font-family: "Gill Sans", sans-serif;
+    color: rgb(53, 53, 53);
+    font-size: 26px;
+    text-decoration: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  .materialHeader {
+    height: 40px;
+  }
+
+  header {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    border-bottom: 3px solid black;
+  }
+  header nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  header nav .headerBg {
+    width: 0;
+  }
+  header nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  header nav ul li {
+    padding: 10px 0;
+    list-style-type: none;
+    border-right: 2px solid black;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    width: 33.3333333333%;
+    background: url("../assets/img/kirpich.jpg") repeat;
+  }
+  header nav ul li a {
+    font-family: "Gill Sans", sans-serif;
+    color: #000000;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  header nav ul li:nth-child(3) {
+    border-right: 0;
+    width: 34%;
+  }
+}
+header .headerBg {
+  background: url("../assets/img/kirpich.jpg") repeat;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  background: #ededed;
+  height: calc(100vh - 60px);
+}
+main .contactsWrapper {
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 1000px;
+  margin-top: 20px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background: #ffffff;
+}
+main .contactsWrapper .companyAttributes {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+main .contactsWrapper .companyAttributes img {
+  width: 101px;
+}
+main .contactsWrapper .companyAttributes .companyName {
+  text-align: center;
+  font-family: "../assets/fonts/Mincho-Regular.ttf", monospace;
+  font-weight: normal;
+}
+main .contactsWrapper .contactsTitle {
+  text-align: center;
+  font-family: "Franklin Gothic Medium", monospace;
+  font-weight: normal;
+}
+main .contactsWrapper .contacts {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+main .contactsWrapper .contacts p {
+  width: 100%;
+  display: flex;
+}
+main .contactsWrapper .contacts p span {
+  font-size: 25px;
+  display: table-cell;
+  margin-bottom: 10px;
+  font-family: monospace;
+}
+main .contactsWrapper .contacts p .question {
+  font-weight: bold;
+  margin-left: 10%;
+  width: 40%;
+}
+main .contactsWrapper .contacts p .answer a {
+  color: #ff4e00;
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    height: 100%;
+    padding-bottom: 20px;
+  }
+  main .contactsWrapper {
+    height: min-content;
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: translateX(0) translateY(0);
+    width: 96%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  main .contactsWrapper .contactsTitle {
+    font-family: "Courier New", ui-serif;
+  }
+  main .contactsWrapper .contacts {
+    margin-bottom: 20px;
+  }
+  main .contactsWrapper .contacts p span {
+    font-size: 20px;
+    font-family: "Segoe UI", serif;
+  }
+  main .contactsWrapper .contacts p .question {
+    margin-left: 5%;
+    width: 30%;
+  }
+  main .contactsWrapper .contacts p .question:after {
+    display: inline;
+    content: ":";
+  }
+  main .contactsWrapper .contacts p .answer {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+@media screen and (max-width: 550px) {
+  main .contactsWrapper .companyAttributes {
+    margin-top: 20px;
+  }
+  main .contactsWrapper .companyAttributes .companyName {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  main .contactsWrapper .contacts p {
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  }
+  main .contactsWrapper .contacts p span {
+    width: 100%;
+  }
+  main .contactsWrapper .contacts p .question {
+    margin-bottom: 0;
+    width: 100%;
+  }
+  main .contactsWrapper .contacts p .answer {
+    margin-bottom: 0;
+  }
+}
+
+/*# sourceMappingURL=contacts.css.map */
