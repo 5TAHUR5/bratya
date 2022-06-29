@@ -8,7 +8,6 @@
   .materialHeader {
     height: 60px;
   }
-
   header {
     position: absolute;
     width: 100%;
@@ -55,7 +54,6 @@
   .materialHeader {
     height: 40px;
   }
-
   header {
     position: absolute;
     width: 100%;
@@ -149,6 +147,17 @@ main .filterWrapper .filter .labelSelector select:focus {
 main .filterWrapper .filter .labelSelector select option {
   outline: none;
 }
+main .filterWrapper .filter .labelSelector #search {
+  font-size: 16px;
+  outline: none;
+  width: 160px;
+}
+main .filterWrapper .filter .labelSelector #search:focus {
+  outline: none;
+}
+main .filterWrapper .filter .labelSelector #search option {
+  outline: none;
+}
 main .catalog {
   width: 100%;
   display: flex;
@@ -157,6 +166,53 @@ main .catalog {
   margin-top: 20px;
   padding-right: calc((100% - 1480px) / 2);
   padding-left: calc((100% - 1480px) / 2);
+}
+main .catalog .hidden {
+  display: none;
+}
+main .catalog .loaderWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+main .catalog .loaderWrapper .loader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+main .catalog .loaderWrapper .loader div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  animation: loader 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+main .catalog .loaderWrapper .loader div:nth-child(1) {
+  background: #c76c24;
+  left: 8px;
+  animation-delay: -0.24s;
+}
+main .catalog .loaderWrapper .loader div:nth-child(2) {
+  background: #000;
+  left: 32px;
+  animation-delay: -0.12s;
+}
+main .catalog .loaderWrapper .loader div:nth-child(3) {
+  background: #c76c24;
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes loader {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
 }
 main .catalog .card {
   width: 350px;
@@ -234,6 +290,74 @@ main .catalog .card .orderBtn:hover {
 main .catalog .card .orderBtn:active {
   background: rgb(33, 147, 90);
   box-shadow: 0 3px rgb(33, 147, 90) inset;
+}
+main .paginationWrapper {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+main .paginationWrapper .arrow:first-child {
+  border-radius: 4px 0 0 4px;
+  margin-right: 1px;
+}
+main .paginationWrapper .arrow:last-child {
+  border-radius: 0 4px 4px 0;
+}
+main .paginationWrapper .paginationBtn {
+  border: 1px solid gray;
+  height: 100%;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+main .paginationWrapper .paginationBtn:hover {
+  background: #eaeaea;
+}
+main .paginationWrapper .paginationBtn:active {
+  background: #c2c2c2;
+}
+main .paginationWrapper .paginationBtn a {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+main .paginationWrapper .enabled {
+  border: 1px solid gray;
+  background: #e0e0e0;
+}
+main .paginationWrapper .enabled:hover {
+  background: #e0e0e0;
+}
+main .paginationWrapper .enabled:active {
+  background: #e0e0e0;
+}
+main .paginationWrapper .disabled {
+  border: 1px solid white;
+  background: white;
+  color: white;
+}
+main .paginationWrapper .disabled:hover {
+  background: white;
+}
+main .paginationWrapper .disabled:active {
+  background: white;
+}
+main .paginationWrapper .pagesWrapper {
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
+main .paginationWrapper .pagesWrapper .paginationBtn {
+  margin-right: 1px;
+  border-radius: 2px;
 }
 
 @media screen and (max-width: 1480px) {

@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="каталог кирпичей в казани">
     <meta name="keywords" content="каталог, кирпич, казань">
-    <title>Title</title>
+    <title>Catalog</title>
     <link rel="stylesheet" href="/static/scss/catalog.css">
+    <script type="module" src="/static/js/catalog.js" defer></script>
 </head>
 <body>
 <header>
@@ -27,151 +28,32 @@
             <div class="iconWrapper">
                 <img src="/static/assets/img/filter.svg" alt="" class="iconFilter">
             </div>
-            <label class="labelSelector" for="selectBrickType">Тип товара:<br>
-                <select name="brickType" id="selectBrickType">
-                    <option value="BRICK">Кирпич</option>
-                    <option value="PAVING_STONES">Брусчатка</option>
-                </select>
-            </label>
             <label class="labelSelector" for="selectPriceFilter">По цене:<br>
                 <select name="brickType" id="selectPriceFilter">
-                    <option value="UP">По возрастанию</option>
                     <option value="DAWN">По убыванию</option>
+                    <option value="UP">По возрастанию</option>
                 </select>
+            </label>
+            <label class="labelSelector" for="search">Поиск:<br>
+                <input type="text" id="search">
             </label>
         </div>
     </div>
-
+    <div class="loaderWrapper">
+        <div class="loader"><div></div><div></div><div></div></div>
+    </div>
     <div class="catalog">
-        <div class="card">
-            <div class="icon">
-                <img src="" alt="">
-            </div>
-            <span class="brickName">
-                    .......................
-                </span>
-            <span class="brickSize">
-                <span class="sizeName">
-                    Размер:
-                </span>
-                ..cm * ..cm * ..cm
-            </span> <span class="priceName">
-                    Цена: <span class="price">...P</span>
-            </span>
-        </div>
 
-        <div class="card">
-            <div class="icon">
-                <img src="" alt="">
-            </div>
-            <span class="brickName">
-                    .......................
-                </span>
-            <span class="brickSize">
-                <span class="sizeName">
-                    Размер:
-                </span>
-                ..cm * ..cm * ..cm
-            </span> <span class="priceName">
-                    Цена: <span class="price">...P</span>
-            </span>
+    </div>
+    <div class="paginationWrapper">
+        <div class="paginationBtn arrow disabled" id="arrowLeft">
+            <a>«</a>
         </div>
-        <div class="card">
-            <div class="icon">
-                <img src="" alt="">
-            </div>
-            <span class="brickName">
-                    .......................
-                </span>
-            <span class="brickSize">
-                <span class="sizeName">
-                    Размер:
-                </span>
-                ..cm * ..cm * ..cm
-            </span> <span class="priceName">
-                    Цена: <span class="price">...P</span>
-            </span>
-        </div>
-        <div class="card">
-            <div class="icon">
-                <img src="" alt="">
-            </div>
-            <span class="brickName">
-                    .......................
-                </span>
-            <span class="brickSize">
-                <span class="sizeName">
-                    Размер:
-                </span>
-                ..cm * ..cm * ..cm
-            </span> <span class="priceName">
-                    Цена: <span class="price">...P</span>
-            </span>
-        </div>
-        <div class="card">
-            <div class="icon">
-                <img src="" alt="">
-            </div>
-            <span class="brickName">
-                    .......................
-                </span>
-            <span class="brickSize">
-                <span class="sizeName">
-                    Размер:
-                </span>
-                ..cm * ..cm * ..cm
-            </span> <span class="priceName">
-                    Цена: <span class="price">...P</span>
-            </span>
-        </div>
+        <div class="pagesWrapper">
 
-        <div class="card">
-            <div class="icon">
-                <img src="" alt="">
-            </div>
-            <span class="brickName">
-                    ..................................
-                </span>
-            <span class="brickSize">
-                <span class="sizeName">
-                    Размер:
-                </span>
-                ..cm * ..cm * ..cm
-            </span> <span class="priceName">
-                    Цена: <span class="price">...P</span>
-            </span>
         </div>
-        <div class="card">
-            <div class="icon">
-                <img src="" alt="">
-            </div>
-            <span class="brickName">
-                    .......................
-                </span>
-            <span class="brickSize">
-                <span class="sizeName">
-                    Размер:
-                </span>
-                ..cm * ..cm * ..cm
-            </span> <span class="priceName">
-                    Цена: <span class="price">...P</span>
-            </span>
-        </div>
-        <div class="card">
-            <div class="icon">
-                <img src="" alt="">
-            </div>
-            <span class="brickName">
-                    .......................
-                </span>
-            <span class="brickSize">
-                <span class="sizeName">
-                    Размер:
-                </span>
-                ..cm * ..cm * ..cm
-            </span> <span class="priceName">
-                    Цена: <span class="price">...P</span>
-            </span>
+        <div class="paginationBtn arrow" id="arrowRight">
+            <a>»</a>
         </div>
     </div>
 </main>

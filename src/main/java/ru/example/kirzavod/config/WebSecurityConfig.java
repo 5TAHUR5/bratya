@@ -23,19 +23,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Value("${admin.login.url}")
     private String loginURL;
 
+    @Value("${admin.panel.url}")
+    private String adminPanelURL;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/", "/catalog", "/static/**", "/contacts", "/login").permitAll()
-                    .anyRequest().authenticated()
+                .antMatchers("/", "/catalog", "/contacts", "/static/**", "/publicRest/**", "/img/**").permitAll()
+                .anyRequest().authenticated();
+        http
+                .formLogin()
+                .loginPage("/" + loginURL)
+                .permitAll()
+                .defaultSuccessUrl("/" + adminPanelURL)
                 .and()
-                    .formLogin()
-                    .loginPage("/" + loginURL)
-                    .permitAll()
-                .and()
-                    .logout()
-                    .permitAll();
+                .logout()
+                .permitAll();
     }
 
     @Bean
@@ -46,6 +50,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser(adminName).password(adminPassword).roles("ADMIN");
+                .withUser(adminName).password(getPasswordEncoder().encode(adminPassword)).roles("ADMIN");
     }
 }

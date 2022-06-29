@@ -17,12 +17,14 @@ public class Brick {
 
     private String img;
 
-    @Column(length = 16)
+    @Column(length = 32)
     private String dimension;
 
-    @Enumerated(EnumType.STRING)
-    private BrickType brickType;
 
+    @Override
+    public String toString() {
+        return "Id:" + id + ", Name: " + name + ", Price: " + price + ", Dimension: " + dimension + ", Img: " + img;
+    }
 
     public String getDimension() {
         return dimension;

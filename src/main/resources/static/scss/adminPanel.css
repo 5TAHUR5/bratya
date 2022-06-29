@@ -1,0 +1,111 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+main .adminPanel {
+  width: 60%;
+  border: 1px solid black;
+}
+main .adminPanel .btnsBar {
+  width: 100%;
+  height: 30px;
+  border-bottom: 1px solid black;
+}
+main .adminPanel .btnsBar button {
+  cursor: pointer;
+  width: 25%;
+  height: 100%;
+  border-radius: 0;
+  border: 0;
+  background: #a4a4a4;
+  font-size: 18px;
+  color: #0e0e0e;
+  text-decoration: none;
+}
+main .adminPanel .btnsBar button:hover {
+  background: #b6b6b6;
+  color: #333333;
+}
+main .adminPanel .filterWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .adminPanel .filterWrapper .filter {
+  width: 1460px;
+  border: 0;
+  border-bottom: 1px solid black;
+  height: 75px;
+  display: flex;
+  align-items: center;
+}
+main .adminPanel .filterWrapper .filter .iconWrapper {
+  margin-left: 15px;
+  margin-right: -20px;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+main .adminPanel .filterWrapper .filter .iconWrapper img {
+  width: 50px;
+  height: 50px;
+}
+main .adminPanel .filterWrapper .filter .labelSelector {
+  height: 100%;
+  margin-left: 40px;
+  padding-top: 10px;
+  font-size: 24px;
+}
+main .adminPanel .filterWrapper .filter .labelSelector select {
+  font-size: 18px;
+  outline: none;
+}
+main .adminPanel .filterWrapper .filter .labelSelector select:focus {
+  outline: none;
+}
+main .adminPanel .filterWrapper .filter .labelSelector select option {
+  outline: none;
+}
+main .adminPanel .filterWrapper .filter .labelSelector #search {
+  font-size: 16px;
+  outline: none;
+  width: 160px;
+}
+main .adminPanel .filterWrapper .filter .labelSelector #search:focus {
+  outline: none;
+}
+main .adminPanel .filterWrapper .filter .labelSelector #search option {
+  outline: none;
+}
+main .adminPanel .brickList .card {
+  width: 100%;
+  height: 200px;
+  border-bottom: 1px solid black;
+  padding: 15px;
+}
+main .adminPanel .brickList .card .imgWrapper {
+  display: inline-block;
+  border: 9px solid #a8a8a8;
+  border-radius: 10px;
+  width: 170px;
+  height: 170px;
+}
+main .adminPanel .brickList .card .imgWrapper img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+main .adminPanel .brickList .card .properties {
+  display: inline-block;
+}
+
+/*# sourceMappingURL=adminPanel.css.map */

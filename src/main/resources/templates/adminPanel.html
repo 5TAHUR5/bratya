@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/scss/adminPanel.css">
+</head>
+<body>
+<main>
+    <div class="adminPanel">
+        <div class="btnsBar">
+            <button onclick="document.location.href = '/createBrick'">Create brick</button>
+        </div>
+        <div class="filterWrapper">
+            <div class="filter">
+                <div class="iconWrapper">
+                    <img src="/static/assets/img/filter.svg" alt="" class="iconFilter">
+                </div>
+                <label class="labelSelector" for="selectPriceFilter">По цене:<br>
+                    <select name="brickType" id="selectPriceFilter">
+                        <option value="DAWN">По убыванию</option>
+                        <option value="UP">По возрастанию</option>
+                    </select>
+                </label>
+                <label class="labelSelector" for="search">Поиск:<br>
+                    <input type="text" id="search">
+                </label>
+            </div>
+        </div>
+        <div class="brickList">
+            <div class="card">
+                <div class="imgWrapper">
+                    <img src="/static/assets/img/filter.svg" alt="">
+                </div>
+                <div class="properties">
+                    <div class="idWrapper"><span>ID 65</span></div>
+                    <div class="priceWrapper"><span>Price: 333P</span></div>
+                    <div class="nameWrapper"><span>Name: zdtzdt</span></div>
+                    <div class="dimensionWrapper"><span>Dimension: 25cm * 30cm * 15cm</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

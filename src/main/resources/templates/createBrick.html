@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/scss/createBrick.css">
+</head>
+<body>
+<main>
+    <div class="formWrapper">
+        <form method="post" enctype="multipart/form-data" th:action="@{/createBrick}">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <label>
+
+                <span>Название кирпича: </span>
+                <input class="inputs" type="text" name="name" placeholder="">
+            </label>
+            <div class="dimensionWrapper">
+                <span>Размеры:</span><br>
+                <label>
+                    <span>Высота: <input type="number" name="height"> см</span>
+                    <img src="/static/assets/img/height.png" alt="">
+                </label>
+                <label>
+                    <span>Ширина: <input type="number" name="width"> см</span>
+                    <img src="/static/assets/img/width.png" alt="">
+                </label>
+                <label>
+                    <span>Длина: <input type="number" name="longB"> см</span>
+                    <img src="/static/assets/img/long.png" alt="">
+                </label>
+            </div>
+            <label>
+                <span>Цена (P): </span>
+                <input class="inputs" type="number" name="price" placeholder="">
+            </label>
+            <input class="fileInput" type="file" name="file" placeholder="File"><br>
+            <div class="btnWrapper">
+                <button type="submit"><span>создать</span></button>
+            </div>
+        </form>
+    </div>
+</main>
+
+</body>
+</html>
