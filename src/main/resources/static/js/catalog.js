@@ -55,7 +55,7 @@ const setPage = async (number) => {
 }
 
 const getBricks = async () => {
-    makeElementVisible(loaderWrapper)
+    makeElementVisible(loaderWrapper, "flex")
     clearElementOfChild(catalog)
     const bricksFromServer = await (await fetch(urlForBricks + `?limit=${limit}&page=${page}&search=${searchLine}&filter_price=${filterOfPrice}`, {
         method: "GET"

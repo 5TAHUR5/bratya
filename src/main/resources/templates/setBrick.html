@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Set Brick</title>
+    <link rel="stylesheet" href="/static/scss/setBrick.css">
+    <script src="/static/js/setBrick.js" defer type="modulez"></script>
+</head>
+<body>
+<main>
+    <div class="formWrapper">
+        <form method="post" enctype="multipart/form-data" th:action="@{/setBrick}">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+        </form>
+    </div>
+</main>
+</body>
+</html>

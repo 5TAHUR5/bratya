@@ -4,9 +4,12 @@
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none;
+}
+
 main {
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   padding-top: 40px;
@@ -14,6 +17,8 @@ main {
 main .adminPanel {
   width: 60%;
   border: 1px solid black;
+  border-bottom: 0;
+  margin-bottom: 40px;
 }
 main .adminPanel .btnsBar {
   width: 100%;
@@ -86,7 +91,52 @@ main .adminPanel .filterWrapper .filter .labelSelector #search:focus {
 main .adminPanel .filterWrapper .filter .labelSelector #search option {
   outline: none;
 }
+main .adminPanel .loaderWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+main .adminPanel .loaderWrapper .loader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+main .adminPanel .loaderWrapper .loader div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  animation: loader 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+main .adminPanel .loaderWrapper .loader div:nth-child(1) {
+  background: #c76c24;
+  left: 8px;
+  animation-delay: -0.24s;
+}
+main .adminPanel .loaderWrapper .loader div:nth-child(2) {
+  background: #000;
+  left: 32px;
+  animation-delay: -0.12s;
+}
+main .adminPanel .loaderWrapper .loader div:nth-child(3) {
+  background: #c76c24;
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes loader {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
+}
 main .adminPanel .brickList .card {
+  position: relative;
   width: 100%;
   height: 200px;
   border-bottom: 1px solid black;
@@ -95,7 +145,7 @@ main .adminPanel .brickList .card {
   align-items: center;
 }
 main .adminPanel .brickList .card .imgWrapper {
-  border: 9px solid #a8a8a8;
+  border: 9px solid #9f9f9f;
   border-radius: 10px;
   width: 170px;
   height: 170px;
@@ -140,6 +190,50 @@ main .adminPanel .brickList .card .properties .numProperty .dimensionWrapper {
 }
 main .adminPanel .brickList .card .properties .numProperty .dimensionWrapper span {
   font-weight: bolder;
+}
+main .adminPanel .brickList .card .redactorBtnGroup {
+  position: absolute;
+  right: 40px;
+}
+main .adminPanel .brickList .card .redactorBtnGroup div {
+  border-radius: 5px;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  font-size: 22px;
+  font-family: "../assets/fonts/Roboto/Roboto-Light.ttf", monospace;
+}
+main .adminPanel .brickList .card .redactorBtnGroup div img {
+  margin-right: 3px;
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+}
+main .adminPanel .brickList .card .redactorBtnGroup .editBtn {
+  background: #efcd00;
+  margin-bottom: 30px;
+}
+main .adminPanel .brickList .card .redactorBtnGroup .editBtn:hover {
+  background: #ffd700;
+}
+main .adminPanel .brickList .card .redactorBtnGroup .deleteBtn {
+  background: #e50000;
+}
+main .adminPanel .brickList .card .redactorBtnGroup .deleteBtn:hover {
+  background: #ff0000;
+}
+main .adminPanel .nothingFoundWrapper {
+  font-size: 24px;
+  border-bottom: 1px solid black;
+  padding: 15px 0;
+}
+main .adminPanel .nothingFoundWrapper .nothingFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=adminPanel.css.map */

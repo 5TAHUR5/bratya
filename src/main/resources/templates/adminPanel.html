@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Admin Panel</title>
     <link rel="stylesheet" href="/static/scss/adminPanel.css">
+    <script type="module" src="/static/js/adminPanel.js" defer></script>
 </head>
 <body>
 <main>
@@ -17,37 +18,35 @@
                     <img src="/static/assets/img/filter.svg" alt="" class="iconFilter">
                 </div>
                 <label class="labelSelector" for="selectPriceFilter">По цене:<br>
-                    <select name="brickType" id="selectPriceFilter">
-                        <option value="DAWN">По убыванию</option>
-                        <option value="UP">По возрастанию</option>
+                    <select id="selectPriceFilter">
+                        <option value="NOT">Не фильтровать</option>
+                        <option value="PRICE_DAWN">По убыванию</option>
+                        <option value="PRICE_UP">По возрастанию</option>
+                    </select>
+
+                </label>
+                <label class="labelSelector" for="selectIdFilter">По id:<br>
+                    <select id="selectIdFilter">
+                        <option value="NOT">Не фильтровать</option>
+                        <option value="ID_DAWN">По убыванию</option>
+                        <option value="ID_UP">По возрастанию</option>
                     </select>
                 </label>
-                <label class="labelSelector" for="search">Поиск:<br>
+                <label class="labelSelector" for="search">Поиск по имени:<br>
                     <input type="text" id="search">
+                </label>
+                <label class="labelSelector" for="searchByID">Поиск по id:<br>
+                    <input type="number" id="searchByID">
                 </label>
             </div>
         </div>
-        <div class="brickList">
-            <div class="card">
-                <div class="imgWrapper">
-                    <img src="/static/assets/img/filter.svg" alt="">
-                </div>
-                <div class="properties">
-                    <div class="idWrapper"><span>ID 65</span></div>
-                    <div class="numProperty">
-                        <div class="priceWrapper">Price: <span>333P</span></div>
-                        <div class="nameWrapper">Name: <span>zdtzdt</span></div>
-                        <div class="dimensionWrapper">Dimension: <span>25cm * 30cm * 15cm</span></div>
-                    </div>
-                </div>
-                <div class="redactorBtnGroup">
-                    <div class="deleteBtnWrapper">
-                        <div class="deleteBtn"></div>
-                    </div>
-                    <div class="editBtnWrapper">
-                        <div class="editBtn"></div>
-                    </div>
-                </div>
+        <div class="loaderWrapper">
+            <div class="loader"><div></div><div></div><div></div></div>
+        </div>
+        <div class="brickList"></div>
+        <div class="nothingFoundWrapper hidden">
+            <div class="nothingFound">
+                НИЧЕГО НЕ НАЙДЕНО
             </div>
         </div>
     </div>

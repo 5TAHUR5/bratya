@@ -1,7 +1,7 @@
 export const makeElementInvisible = (el) => {
-    el.classList.add("hidden")
+    el.style = "display: none"
 }
 
-export const makeElementVisible = (el) => {
-    el.classList.remove("hidden")
+export const makeElementVisible = (el, display) => {
+    el.style = "display: " + display
 }

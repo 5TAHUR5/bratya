@@ -63,6 +63,8 @@ public class CreateBrickController {
         return "redirect:/adminPanel";
     }
 
+
+
     @GetMapping("/createBrick")
     public  String getHmlCretaeBrick() {
         return "createBrick";
