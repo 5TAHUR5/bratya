@@ -4,3 +4,6 @@ export const clearElementOfChild = (el) => {
     }
 }
 
+export const getParamFromUrl = (param) => {
+    return (new URL(document.location)).searchParams.get(param);
+}

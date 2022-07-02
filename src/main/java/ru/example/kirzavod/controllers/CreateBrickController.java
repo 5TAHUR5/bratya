@@ -12,10 +12,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import ru.example.kirzavod.domain.Brick;
 import ru.example.kirzavod.repo.BrickRepo;
+import ru.example.kirzavod.utils.FileIsNullException;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
+
+import static ru.example.kirzavod.utils.Utils.saveImgForBrick;
 
 @Controller
 public class CreateBrickController {
@@ -42,22 +45,12 @@ public class CreateBrickController {
             brick.setDimension(longB + "см " + width + "см " + height + "см ");
             brick.setName(name);
             brick.setPrice(price);
-            if (file != null && !file.getOriginalFilename().isEmpty()) {
-                File uploadDir = new File(uploadPath);
-
-                if (!uploadDir.exists()) {
-                    uploadDir.mkdir();
-                }
-
-                String uuidFile = UUID.randomUUID().toString();
-                String resultFilename = uuidFile + "." + file.getOriginalFilename();
-
-                file.transferTo(new File(uploadPath + "/" + resultFilename));
-
-                brick.setImg(resultFilename);
-                System.out.println(brick.toString());
-                brickRepo.save(brick);
+            try {
+                brick.setImg(saveImgForBrick(file, uploadPath));
+            } catch (FileIsNullException e) {
+                throw new RuntimeException(e);
             }
+            brickRepo.save(brick);
 
         }
         return "redirect:/adminPanel";

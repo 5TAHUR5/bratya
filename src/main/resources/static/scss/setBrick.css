@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -98,6 +102,10 @@ main .formWrapper form .btnWrapper button {
 }
 main .formWrapper form .btnWrapper button span {
   font-size: 20px;
+}
+main .formWrapper .notBrickWrapper {
+  font-size: 24px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=setBrick.css.map */

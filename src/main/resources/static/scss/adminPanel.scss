@@ -135,7 +135,7 @@ main {
       .loader div:nth-child(3) {
         background: #c76c24;
         left: 56px;
-        animation-delay: 0;
+        animation-delay: 0ms;
       }
       @keyframes loader {
         0% {
@@ -208,7 +208,9 @@ main {
         .redactorBtnGroup {
           position: absolute;
           right: 40px;
-          div {
+          button {
+            border: 0;
+            outline: none;
             border-radius: 5px;
             width: 150px;
             height: 50px;
@@ -230,12 +232,22 @@ main {
             margin-bottom: 30px;
             &:hover {
               background: #ffd700;
+              outline: none;
+            }
+            &:active {
+              outline: none;
+              background: #e5c500;
             }
           }
           .deleteBtn {
             background: #e50000;
             &:hover {
               background: #ff0000;
+              outline: none;
+            }
+            &:active {
+              outline: none;
+              background: #d20000;
             }
           }
         }

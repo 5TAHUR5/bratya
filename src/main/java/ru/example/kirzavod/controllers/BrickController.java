@@ -2,14 +2,13 @@ package ru.example.kirzavod.controllers;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.web.bind.annotation.*;
 import ru.example.kirzavod.domain.Brick;
 import ru.example.kirzavod.repo.BrickRepo;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,6 +18,9 @@ public class BrickController {
 
     @Autowired
     private BrickRepo brickRepo;
+
+    @Value("${admin.name}")
+    private String adminName;
 
     @GetMapping("/publicRest/getBricksDKJuISehg7dBSRfIJOUHJ5654cda")
     public List<Brick> getBricks(@RequestParam String limit,
@@ -60,6 +62,7 @@ public class BrickController {
                 .sorted(brickComparator)
                 .collect(Collectors.toList());
     }
+
 
 
     @GetMapping("/getBricById_xrtjxftthr6uuxr6j64se5gezdryy5uy76")

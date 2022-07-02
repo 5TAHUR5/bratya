@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <title>Set Brick</title>
     <link rel="stylesheet" href="/static/scss/setBrick.css">
-    <script src="/static/js/setBrick.js" defer type="modulez"></script>
+    <link rel="icon" type="image/png" href="http://localhost:8080/favicon.png">
+    <script src="/static/js/setBrick.js" defer type="module"></script>
 </head>
 <body>
 <main>
     <div class="formWrapper">
         <form method="post" enctype="multipart/form-data" th:action="@{/setBrick}">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
         </form>
+        <div class="notBrickWrapper hidden">
+            Кирпич для изменений не выбран
+        </div>
     </div>
 </main>
 </body>
