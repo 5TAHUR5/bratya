@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,10 +13,7 @@ import ru.example.kirzavod.domain.Brick;
 import ru.example.kirzavod.repo.BrickRepo;
 import ru.example.kirzavod.utils.FileIsNullException;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
-import java.util.UUID;
 
 import static ru.example.kirzavod.utils.Utils.saveImgForBrick;
 
@@ -49,7 +45,7 @@ public class AdminPanelController {
             brick.setId(Long.valueOf(id));
             brick.setDimension(longB + "см " + width + "см " + height + "см ");
             brick.setName(name);
-            brick.setPrice(price);
+            brick.setPrice(Float.valueOf(price));
             try {
                 brick.setImg(saveImgForBrick(file, uploadPath));
             } catch (FileIsNullException e) {

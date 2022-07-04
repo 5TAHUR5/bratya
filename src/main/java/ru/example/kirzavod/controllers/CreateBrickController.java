@@ -44,7 +44,7 @@ public class CreateBrickController {
             Brick brick = new Brick();
             brick.setDimension(longB + "см " + width + "см " + height + "см ");
             brick.setName(name);
-            brick.setPrice(price);
+            brick.setPrice(Float.valueOf(price));
             try {
                 brick.setImg(saveImgForBrick(file, uploadPath));
             } catch (FileIsNullException e) {

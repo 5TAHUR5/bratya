@@ -13,7 +13,7 @@ public class Brick {
     private String name;
 
     @Column(length = 8)
-    private String price;
+    private Float price;
 
     private String img;
 
@@ -50,11 +50,11 @@ public class Brick {
         this.name = name;
     }
 
-    public String getPrice() {
+    public Float getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
 

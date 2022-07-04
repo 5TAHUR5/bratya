@@ -5,7 +5,7 @@ import {clearElementOfChild} from "./utils.js";
 const urlForBricks = "http://localhost:8080/publicRest/getBricksDKJuISehg7dBSRfIJOUHJ5654cda"
 const urlForBricksCount = "http://localhost:8080/publicRest/getBricksCount_ftjx4eyes3vwr4tfxt4tTBWrftur5"
 
-let limit = 2
+let limit = 8
 let page = 1
 let pageCount = 0
 let searchLine = ""
