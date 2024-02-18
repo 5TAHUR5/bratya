@@ -14,10 +14,7 @@ import ru.example.kirzavod.domain.Brick;
 import ru.example.kirzavod.repo.BrickRepo;
 import ru.example.kirzavod.utils.FileIsNullException;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.UUID;
-
 import static ru.example.kirzavod.utils.Utils.saveImgForBrick;
 
 @Controller

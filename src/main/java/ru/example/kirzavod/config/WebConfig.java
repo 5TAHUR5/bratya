@@ -16,6 +16,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Value("${admin.panel.url}")
     private String adminPanelURL;
 
+    @SuppressWarnings("null")
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/").setViewName("index");
@@ -24,6 +25,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addViewController(adminPanelURL).setViewName("adminPanel");
     }
 
+    @SuppressWarnings("null")
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**")

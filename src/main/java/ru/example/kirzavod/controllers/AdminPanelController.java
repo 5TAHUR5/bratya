@@ -30,6 +30,7 @@ public class AdminPanelController {
     @Autowired
     private BrickRepo brickRepo;
 
+    @SuppressWarnings("null")
     @PostMapping("/setBrick")
     public String setBrick(@AuthenticationPrincipal User user,
                          @RequestParam String name,
@@ -56,6 +57,7 @@ public class AdminPanelController {
         return "redirect:/adminPanel";
     }
 
+    @SuppressWarnings("null")
     @GetMapping("/deleteBrickthj6u4se5y43sea4yr5u")
     public String deleteBrick(@AuthenticationPrincipal User user,
                             @RequestParam Long id) {

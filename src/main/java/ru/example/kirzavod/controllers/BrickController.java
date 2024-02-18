@@ -3,8 +3,6 @@ package ru.example.kirzavod.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.*;
 import ru.example.kirzavod.domain.Brick;
 import ru.example.kirzavod.repo.BrickRepo;
@@ -65,6 +63,7 @@ public class BrickController {
 
 
 
+    @SuppressWarnings("null")
     @GetMapping("/getBricById_xrtjxftthr6uuxr6j64se5gezdryy5uy76")
     public Brick getBrickById(@RequestParam String id) {
         return brickRepo.findById(Long.valueOf(id)).get();
